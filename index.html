@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Beethoven Op.2/1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎹</text></svg>">
+    <meta name="theme-color" content="#0f172a">
+    <title>Sonata Op. 2 n.º 1 · I. Allegro — Plan de Estudio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>Sonata Op. 2 n.º 1</h1>
+                <p class="composer">Ludwig van Beethoven</p>
+                <p class="subtitle">I. Allegro · Fa menor · Plan de Estudio</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0/10 completados</span>
+                </div>
+
+                <div class="backup-buttons">
+                    <button class="backup-btn" id="exportBtn" title="Exportar backup">
+                        <span>📥</span> Exportar
+                    </button>
+                    <button class="backup-btn" id="importBtn" title="Importar backup">
+                        <span>📤</span> Importar
+                    </button>
+                    <input type="file" id="importInput" accept=".json" hidden>
+                </div>
+
+                <a class="imslp-link" href="https://imslp.org/wiki/Piano_Sonata_No.1,_Op.2_No.1_(Beethoven,_Ludwig_van)" target="_blank" rel="noopener">
+                    📄 Partitura completa (IMSLP)
+                </a>
+            </div>
+
+            <nav class="sections-nav" id="sectionsNav">
+                <div class="section-group">
+                    <button class="section-header" data-section="exposicion">
+                        <span class="section-icon">▼</span>
+                        <span class="section-title">Exposición · Fm → La♭</span>
+                        <span class="section-count">cc. 1–48</span>
+                    </button>
+                    <div class="section-items" id="section-exposicion"></div>
+                </div>
+
+                <div class="section-group">
+                    <button class="section-header" data-section="desarrollo">
+                        <span class="section-icon">▶</span>
+                        <span class="section-title">Desarrollo · La♭/Sib/Cm</span>
+                        <span class="section-count">cc. 49–105</span>
+                    </button>
+                    <div class="section-items collapsed" id="section-desarrollo"></div>
+                </div>
+
+                <div class="section-group">
+                    <button class="section-header" data-section="reexposicion">
+                        <span class="section-icon">▶</span>
+                        <span class="section-title">Reexposición · Fm</span>
+                        <span class="section-count">cc. 106–145</span>
+                    </button>
+                    <div class="section-items collapsed" id="section-reexposicion"></div>
+                </div>
+
+                <div class="section-group">
+                    <button class="section-header" data-section="coda">
+                        <span class="section-icon">▶</span>
+                        <span class="section-title">Coda · Fm</span>
+                        <span class="section-count">cc. 146–152</span>
+                    </button>
+                    <div class="section-items collapsed" id="section-coda"></div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="pasaje-view" id="pasajeView">
+                <!-- Header -->
+                <div class="variation-header">
+                    <div class="nav-buttons">
+                        <button class="nav-btn" id="prevBtn" title="Anterior">◀</button>
+                        <div class="title-block">
+                            <h2 class="variation-title" id="pasajeTitulo">Cargando…</h2>
+                            <span class="compases-badge" id="pasajeCompases"></span>
+                        </div>
+                        <button class="nav-btn" id="nextBtn" title="Siguiente">▶</button>
+                    </div>
+                    <div class="variation-status">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="completedCheckbox">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">Estudiado</span>
+                        </label>
+                        <span class="date-completed" id="dateCompleted"></span>
+                    </div>
+                </div>
+
+                <!-- Reference Recording -->
+                <div class="reference-section">
+                    <h3>Grabación de referencia</h3>
+                    <p class="reference-meta">Wilhelm Kempff · Deutsche Grammophon · 1965</p>
+                    <div class="yt-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/u7SdBEOVqw4"
+                            title="Beethoven Sonata Op. 2 No. 1 — Wilhelm Kempff"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Schiff Analysis -->
+                <div class="reference-section analysis-section">
+                    <h3>Análisis · András Schiff</h3>
+                    <p class="reference-meta">Conferencia-recital · Wigmore Hall · BBC Radio 3 · 2004</p>
+                    <p class="analysis-intro">Schiff analiza la estructura, armonía y carácter de la sonata con referencias a las ediciones y al contexto histórico. Aproximadamente 45–60 min.</p>
+                    <div class="yt-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/biHcEMPBqWI"
+                            title="Beethoven Sonata Op. 2 No. 1 — András Schiff lecture"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Metronome -->
+                <div class="metronome-section">
+                    <h3>Metrónomo</h3>
+                    <div class="metronome-container">
+                        <div class="metronome-display">
+                            <span class="metro-beat" id="metroBeat"></span>
+                            <span class="metro-bpm" id="metroBpm">120</span>
+                            <span class="metro-label">BPM</span>
+                        </div>
+                        <input type="range" class="metro-slider" id="metroSlider"
+                               min="40" max="220" value="120">
+                        <div class="metro-presets">
+                            <button class="metro-preset" data-bpm="60">60</button>
+                            <button class="metro-preset" data-bpm="80">80</button>
+                            <button class="metro-preset" data-bpm="100">100</button>
+                            <button class="metro-preset active" data-bpm="120">120</button>
+                            <button class="metro-preset" data-bpm="160">160</button>
+                        </div>
+                        <button class="metro-btn" id="metroBtn">▶ Iniciar</button>
+                    </div>
+                </div>
+
+                <!-- Score Image -->
+                <div class="manuscript-section">
+                    <h3>Partitura anotada <span class="zoom-hint">— toca para ampliar</span></h3>
+                    <div class="manuscript-container">
+                        <img id="manuscriptImg" src="" alt="Partitura anotada" title="Toca para ampliar">
+                    </div>
+                    <!-- Segunda imagen de análisis (opcional por sección) -->
+                    <div class="manuscript-container manuscript-secondary" id="manuscript2Container" style="display:none; margin-top:0.75rem;">
+                        <img id="manuscriptImg2" src="" alt="Partitura anotada (2)">
+                    </div>
+                </div>
+
+                <!-- Fullscreen overlay -->
+                <div class="score-overlay" id="scoreOverlay">
+                    <img id="scoreOverlayImg" src="" alt="Partitura ampliada">
+                </div>
+
+                <!-- Description -->
+                <div class="description-section">
+                    <h3>Análisis</h3>
+                    <p id="pasajeDescripcion"></p>
+                </div>
+
+                <!-- Recording Section -->
+                <div class="recording-section">
+                    <h3>Mis Grabaciones</h3>
+                    <div class="recording-container">
+                        <div class="audio-options" id="audioOptions">
+                            <button class="record-btn" id="recordBtn">
+                                <span class="record-icon">🎤</span>
+                                <span>Audio</span>
+                            </button>
+                            <button class="record-btn record-btn-video" id="recordVideoBtn">
+                                <span class="record-icon">📹</span>
+                                <span>Vídeo</span>
+                            </button>
+                            <span class="audio-separator">o</span>
+                            <input type="file" id="audioInput" accept="audio/*" hidden>
+                            <button class="upload-btn" id="uploadBtn">
+                                <span class="upload-icon">📁</span>
+                                <span>Subir archivo</span>
+                            </button>
+                        </div>
+                        <div class="recorder-active" id="recorderActive" style="display: none;">
+                            <div class="recording-indicator">
+                                <span class="rec-dot"></span>
+                                <span class="rec-text">REC</span>
+                                <span class="rec-time" id="recTime">00:00</span>
+                            </div>
+                            <button class="stop-btn" id="stopBtn">
+                                <span>■</span> Parar
+                            </button>
+                        </div>
+                        <div class="countdown-overlay" id="countdownOverlay" style="display: none;">
+                            <span class="countdown-number" id="countdownNumber">3</span>
+                        </div>
+                        <div class="video-recorder-active" id="videoRecorderActive" style="display: none;">
+                            <div class="video-recorder-layout">
+                                <div class="webcam-wrapper">
+                                    <video id="webcamPreview" autoplay muted playsinline class="webcam-preview"></video>
+                                </div>
+                                <div class="score-thumb-wrapper">
+                                    <img id="scoreThumbnail" class="score-thumbnail" src="" alt="Partitura">
+                                </div>
+                            </div>
+                            <div class="recording-indicator">
+                                <span class="rec-dot"></span>
+                                <span class="rec-text">REC</span>
+                                <span class="rec-time" id="recVideoTime">00:00</span>
+                            </div>
+                            <button class="stop-btn" id="stopVideoBtn">
+                                <span>■</span> Parar
+                            </button>
+                        </div>
+                        <div class="recordings-list" id="recordingsList"></div>
+                        <div class="recordings-list" id="videosList"></div>
+                    </div>
+                </div>
+
+                <!-- My Score Photo Section -->
+                <div class="score-photo-section">
+                    <h3>Mi Partitura Anotada</h3>
+                    <div class="score-photo-container">
+                        <div class="photo-upload-area" id="photoUploadArea">
+                            <input type="file" id="photoInput" accept="image/*" hidden>
+                            <button class="photo-upload-btn" id="photoUploadBtn">
+                                <span class="photo-icon">📷</span>
+                                <span>Subir foto</span>
+                            </button>
+                            <p class="upload-hint">JPG, PNG, HEIC…</p>
+                        </div>
+                        <div class="photo-preview-container" id="photoPreviewContainer" style="display: none;">
+                            <img id="photoPreview" src="" alt="Mi partitura anotada">
+                            <button class="remove-photo-btn" id="removePhotoBtn" title="Eliminar foto">✕</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div class="notes-section">
+                    <h3>Mis Notas</h3>
+                    <textarea id="notesTextarea" placeholder="Digitación, fraseo, pedal, dificultades técnicas, ideas de interpretación…"></textarea>
+                    <div class="notes-footer">
+                        <span class="autosave-indicator" id="autosaveIndicator">Guardado automático</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js?v=1"></script>
+    <script src="js/app.js?v=1"></script>
+</body>
+</html>
