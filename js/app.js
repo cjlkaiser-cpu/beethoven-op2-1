@@ -1105,14 +1105,18 @@ function setupMobileOverlay() {
 
 function setupScoreFullscreen() {
     const img = document.getElementById('manuscriptImg');
+    const img2 = document.getElementById('manuscriptImg2');
     const overlayEl = document.getElementById('scoreOverlay');
     const overlayImg = document.getElementById('scoreOverlayImg');
 
-    img.addEventListener('click', () => {
-        if (!img.src) return;
-        overlayImg.src = img.src;
+    const openOverlay = (src) => {
+        if (!src) return;
+        overlayImg.src = src;
         overlayEl.classList.add('open');
-    });
+    };
+
+    img.addEventListener('click', () => openOverlay(img.src));
+    img2.addEventListener('click', () => openOverlay(img2.src));
 
     overlayEl.addEventListener('click', () => {
         overlayEl.classList.remove('open');
